@@ -19,7 +19,14 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    '@/plugins/element-ui'
+    '@/plugins/element-ui',
+    // {src: '~plugins/down', ssr: false},
+    {src: '~plugins/axios', ssr: false},
+    {src: '~plugins/console', ssr: false},
+    {src: '~plugins/https', ssr: false},
+    {src: '~plugins/meta', ssr: false},
+    {src: '~plugins/route', ssr: false},
+    {src: '~plugins/stat', ssr: false},
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -31,8 +38,28 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy',
+    '@nuxtjs/style-resources'
   ],
-
+  styleResources: {
+    // sass: ['@/assets/px2rem.scss'],
+    less: [],
+    stylus: []
+  },
+  proxy: [
+    [
+      '/api',
+      {
+        target: 'http://localhost:8080',
+        // target: 'https://shop.lt.city/api',
+        pathRewrite: {
+          '^/api': '/',
+          changeOrigin: true
+        }
+      }
+    ]
+  ],
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     transpile: [/^element-ui/],

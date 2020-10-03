@@ -1,4 +1,4 @@
-export const timeApi = {
+export const localTimeApi = {
   isToday(date) {
     let td = new Date()
     td = new Date(td.getFullYear(), td.getMonth(), td.getDate())

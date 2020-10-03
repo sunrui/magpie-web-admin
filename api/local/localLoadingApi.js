@@ -1,4 +1,4 @@
-export const loadingApi = {
+export const localLoadingApi = {
   ref: 0,
   enable: true,
   show() {

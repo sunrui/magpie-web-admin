@@ -1,4 +1,4 @@
-export const cookieApi = {
+export const localCookieApi = {
   clearAll() {
     let keys = document.cookie.match(/[^ =;]+(?==)/g)
     if (keys) {

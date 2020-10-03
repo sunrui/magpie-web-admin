@@ -1,4 +1,4 @@
-export const screenApi = {
+export const localScreenApi = {
   isFullScreen() {
     return document.fullscreenElement ||
       document.msFullscreenElement ||

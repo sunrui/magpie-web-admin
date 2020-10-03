@@ -1,10 +1,10 @@
 /**
  *
- *  base64Api encode / decode
+ *  localBase64Api encode / decode
  *  http://www.webtoolkit.info
  *
  **/
-export const base64Api = {
+export const localBase64Api = {
 
   // private property
   _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/="
@@ -16,7 +16,7 @@ export const base64Api = {
     var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
     var i = 0;
 
-    input = base64Api._utf8_encode(input);
+    input = localBase64Api._utf8_encode(input);
 
     while (i < input.length)
     {
@@ -81,7 +81,7 @@ export const base64Api = {
 
     } // Whend
 
-    output = base64Api._utf8_decode(output);
+    output = localBase64Api._utf8_decode(output);
 
     return output;
   } // End Function decode

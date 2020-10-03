@@ -1,4 +1,4 @@
-export const downloadApi = {
+export const localDownloadApi = {
   download(canvas, fileName) {
     let url = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream')
     if (window.navigator.msSaveOrOpenBlob) {

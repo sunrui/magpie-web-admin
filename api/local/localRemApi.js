@@ -1,4 +1,4 @@
-export const remApi = {
+export const localRemApi = {
   init() {
     let remCalc = {}
     let docEl = window.document.documentElement, tid

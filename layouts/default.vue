@@ -1,5 +1,6 @@
 <template>
   <div>
+    <router-link to="/">home</router-link>
     <Nuxt />
   </div>
 </template>
@@ -59,4 +60,5 @@ html {
   color: #fff;
   background-color: #35495e;
 }
+
 </style>

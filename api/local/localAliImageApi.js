@@ -1,4 +1,4 @@
-export const imageApi = {
+export const localAliImageApi = {
   getXOssProcessTitleBar() {
     return '?x-oss-process=style/titlebar'
   },

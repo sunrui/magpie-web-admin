@@ -1,4 +1,4 @@
-export const loginApi = {
+export const localLoginApi = {
   wechatAppId: 'wxdd2ac18f974e8e70',
   alipayAppId: '2019040463763558',
   loginWechat(wechatAppId, shortId, scope, r, shop) {

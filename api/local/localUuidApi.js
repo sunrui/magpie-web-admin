@@ -1,4 +1,4 @@
-export const uuidApi = {
+export const localUuidApi = {
   uuid() {
     let createUUID = (function (uuidRegEx, uuidReplacer) {
       return function () {

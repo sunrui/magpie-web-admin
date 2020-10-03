@@ -1,6 +1,6 @@
 let store = require('store')
 
-export const storeApi = {
+export const localStoreApi = {
   clearAll() {
     store.clearAll()
   },

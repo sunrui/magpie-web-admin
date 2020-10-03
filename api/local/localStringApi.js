@@ -1,4 +1,4 @@
-export const stringApi = {
+export const localStringApi = {
   trim(s) {
     return this.trimRight(this.trimLeft(s))
   },

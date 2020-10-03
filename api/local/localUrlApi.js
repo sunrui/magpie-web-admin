@@ -1,4 +1,4 @@
-export const urlApi = {
+export const localUrlApi = {
   getCurrentUrl() {
     let url = null
 

@@ -1,4 +1,4 @@
-export const validatorApi = {
+export const localValidatorApi = {
   phone(phone) {
     return /^[1][34578][0-9]{9}$/.test(phone)
   },

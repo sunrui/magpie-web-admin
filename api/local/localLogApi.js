@@ -1,4 +1,4 @@
-export const logApi = {
+export const localLogApi = {
   log(data) {
     if (process.env.NODE_ENV === 'development') {
       console.log(data)

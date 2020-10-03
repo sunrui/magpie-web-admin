@@ -1,4 +1,4 @@
-export const wechatApi = {
+export const localWechatApi = {
   inWechat() {
     if (typeof navigator === 'undefined') {
       return false

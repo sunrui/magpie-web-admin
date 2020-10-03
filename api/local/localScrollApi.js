@@ -1,4 +1,4 @@
-export const scrollApi = {
+export const localScrollApi = {
   _scrollTop: 0,
   enable(enable) {
     if (enable) {

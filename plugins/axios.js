@@ -1,15 +1,15 @@
 import axios from 'axios'
-import {loadingApi} from '../api/local/loadingApi'
-import {storeApi} from '../api/local/storeApi'
-import {userApi} from '../api/local/userApi'
-import {cookieApi} from '../api/local/cookieApi'
-import {logApi} from '../api/local/logApi'
+import {localLoadingApi} from '@/api/local/localLoadingApi'
+import {localStoreApi} from '@/api/local/localStoreApi'
+import {localUserApi} from '@/api/local/localUserApi'
+import {localCookieApi} from '@/api/local/localCookieApi'
+import {localLogApi} from '@/api/local/localLogApi'
 
 axios.defaults.withCredentials = true
 axios.defaults.timeout = 30 * 1000
 
 axios.interceptors.request.use((config) => {
-  loadingApi.show()
+  localLoadingApi.show()
 
   return config
 }, (err) => {
@@ -22,16 +22,16 @@ axios.interceptors.response.use(function (response) {
   console.log(response.data ? response.data : '<null>')
   console.groupEnd()
 
-  loadingApi.hide()
+  localLoadingApi.hide()
 
   return response
 }, function (err) {
-  loadingApi.hide()
+  localLoadingApi.hide()
 
   if (err && err.response) {
     if (err.response.data.error === 'HttpUnauthorized') {
-      userApi.clearAll()
-      cookieApi.clearAll()
+      localUserApi.clearAll()
+      localCookieApi.clearAll()
 
       let r = window.routerUrl
       window.location.href = `/login?r=${r}&shortId=undefined`
@@ -39,16 +39,16 @@ axios.interceptors.response.use(function (response) {
     }
 
     if (process.env.NODE_ENV === 'development') {
-      logApi.error(err.response.data)
+      localLogApi.error(err.response.data)
     } else {
-      storeApi.object.set('error', err.response.data)
+      localStoreApi.object.set('error', err.response.data)
       window.location.href = '/error'
     }
   } else {
     if (process.env.NODE_ENV === 'development') {
-      logApi.error(err)
+      localLogApi.error(err)
     } else {
-      storeApi.object.set('error', err)
+      localStoreApi.object.set('error', err)
       window.location.href = '/error'
     }
   }

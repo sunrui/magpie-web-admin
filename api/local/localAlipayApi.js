@@ -1,4 +1,4 @@
-export const alipayApi = {
+export const localAlipayApi = {
   inAlipay() {
     if (typeof navigator === 'undefined') {
       return false

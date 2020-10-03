@@ -1,4 +1,4 @@
-export const cloneApi = {
+export const localCloneApi = {
   clone(obj) {
     if (obj == null || 'object' !== typeof obj) return obj
 
